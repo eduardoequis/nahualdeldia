@@ -1,6 +1,7 @@
 let dayjs = require('dayjs')
 let nahualInfo = require('./info')
 let create_and_send_tweet = require('./tweet')
+var schedule = require('node-schedule');
 
 
 //Base data 
@@ -75,9 +76,10 @@ function getTodayInfo () {
 
 }
 
+var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
+    getTodayInfo()
+  });
 
 
-
-getTodayInfo()
 
 
