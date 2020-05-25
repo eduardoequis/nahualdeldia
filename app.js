@@ -82,7 +82,15 @@ var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
 
 console.log("Started Online and good!")
 
-timeInterval = 30 * 60000 // 30 minutes 
+// Heroku config add.
+
+var http = require('http'); http.createServer(function (req, res) 
+{ res.writeHead(200, {'Content-Type': 'text/plain'}); 
+res.send('it is running\n'); }).listen(process.env.PORT || 5000);
+
+// Heroku wake up:
+
+let timeInterval = 30 * 60000 // 30 minutes 
 
 setInterval(() => {
    
