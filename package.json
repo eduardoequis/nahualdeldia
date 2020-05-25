@@ -1,0 +1,16 @@
+{
+  "name": "nahual-del-dia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.8.27",
+    "jimp-watermark": "^1.1.0",
+    "twitter": "^1.7.1"
+  }
+}
