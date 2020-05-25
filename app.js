@@ -80,6 +80,6 @@ var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
     getTodayInfo()
   });
 
-
+console.log("ONLINE")
 
 
