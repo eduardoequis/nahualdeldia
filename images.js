@@ -11,13 +11,13 @@ function createImage(daynumber, nahual) {
         'dstPath' : './images/today.png'
     };
 
-   return watermark.addWatermark(number, nahualicon, options)
-    .then(data => {
-        console.log("Imagen creada");
-        return data.destinationPath
-    }).catch(err => {
-        console.log(err);
-    });
+    let imagePath = new Promise((resolve, reject) => { 
+        setTimeout(resolve, 2000, watermark.addWatermark(number, nahualicon, options).then(image => { return image.destinationPath }))
+      })
+    
+      console.log("imagen creada")
+      return imagePath
+
 
 }
 

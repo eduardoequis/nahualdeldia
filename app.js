@@ -21,12 +21,6 @@ function convertMilisecondsToDays(miliseconds) {
     return days;
   };
 
-/*
-console.log("A partir del " +  baseDay.format('DD/MM/YYYY'))
-//console.log("Hoy es:" + today.format('DD/MM/YYYY'))
-console.log("hasta HOY, hay " + daysBetween + " días de diferencia")
-*/
-
 
 //Dia
 function calculateTzolkinDay(diaBase, between) {
@@ -76,12 +70,6 @@ function getTodayInfo () {
     let todayTzolkinDayis = calculateTzolkinDay(tzolkinBaseDay, daysBetween)
     let todayNahualNumber = calculateTodayNahual(nahualBase, daysBetween)
     let todayNahualinfo = nahualInfo.find( nahual => nahual.number === todayNahualNumber );
-
-    /*
-    console.log("El día Nahual es " + todayTzolkinDayis)
-    console.log("Y el Nahual es " + todayNahualinfo.name)
-    console.log(todayNahualinfo)
-    */
 
     create_and_send_tweet(todayTzolkinDayis, todayNahualinfo)
 
