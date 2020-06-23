@@ -76,9 +76,18 @@ function getTodayInfo () {
 
 }
 
+module.exports = (req, res) => {
+   
+    getTodayInfo()
+    res.send("End")
+  }
+
+
+/*
 var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
     getTodayInfo()
   });
+
 
 console.log("Started Online and good!")
 
@@ -103,5 +112,6 @@ setInterval(() => {
 
 }, timeInterval) 
 
+*/
 
 
