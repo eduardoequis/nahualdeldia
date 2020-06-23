@@ -76,17 +76,14 @@ function getTodayInfo () {
 
 }
 
-console.log("Started Online and good!")
-getTodayInfo()
 
-/*
 
 var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
     getTodayInfo()
   });
 
 
-
+console.log("Started Online and good!")
 
 // Heroku config add.
 
@@ -111,4 +108,4 @@ setInterval(() => {
 
 
 
-*/
+
