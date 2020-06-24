@@ -17,8 +17,6 @@ function createImage(daynumber, nahual) {
     
       console.log("imagen creada")
       return imagePath
-
-
 }
 
 module.exports = createImage

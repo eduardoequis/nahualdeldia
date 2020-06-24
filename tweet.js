@@ -30,8 +30,6 @@ ${nahual.day_description}`
 
 function sendTweet (image, text) {
 
-  console.log("se pide el tweet")
-
     let data = fs.readFileSync(image);
 
     // Make post request on media endpoint. Pass file data as media parameter

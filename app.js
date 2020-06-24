@@ -1,14 +1,11 @@
 let dayjs = require('dayjs')
 let nahualInfo = require('./info')
 let create_and_send_tweet = require('./tweet')
-var schedule = require('node-schedule');
-
 
 //Base data 
 let baseDay = dayjs('2020-01-01') // Día: 10  /   Nahual: Kej
 let tzolkinBaseDay = 10
 let nahualBase = 17
-
 
 function convertMilisecondsToDays(miliseconds) {
     
@@ -76,16 +73,8 @@ function getTodayInfo () {
 
 }
 
+getTodayInfo()
 
-
-var j = schedule.scheduleJob({hour: 12, minute: 30}, function(){
-    getTodayInfo()
-  });
-
-
-console.log("Started Online and good!")
-
-// Heroku config add.
 
 const express = require('express')
 const app = express()
@@ -96,15 +85,8 @@ app.get('/', function (req, res) {
  
 app.listen(process.env.PORT || 5000)
 
-// Heroku wake up:
 
-let timeInterval = 30 * 60000 // 30 minutes 
 
-setInterval(() => {
-   
-    console.log("I'm online")
-
-}, timeInterval) 
 
 
 
