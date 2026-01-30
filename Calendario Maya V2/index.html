@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Calendario Maya V2</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+        body { background: #121212; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
+        .preview-card { background: #1e1e1e; border: 1px solid #d4af37; border-radius: 20px; padding: 30px; display: inline-block; }
+        .oro { color: #d4af37; font-size: 4rem; margin: 0; }
+        input { margin-top: 20px; padding: 10px; background: #333; color: white; border: 1px solid #d4af37; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="preview-card">
+        <h2 class="oro" id="num">--</h2>
+        <h1 id="nom">Cargando...</h1>
+        <p id="desc" style="max-width: 300px;">...</p>
+        <input type="date" id="picker">
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const picker = document.getElementById('picker');
+        function update(date) {
+            const data = calcularEnergia(date);
+            document.getElementById('num').innerText = data.numero;
+            document.getElementById('nom').innerText = data.nombre;
+            document.getElementById('desc').innerText = data.desc;
+        }
+        picker.addEventListener('change', (e) => update(e.target.value));
+        window.onload = () => {
+            const hoy = dayjs().format('YYYY-MM-DD');
+            picker.value = hoy;
+            update(hoy);
+        };
+    </script>
+</body>
+</html>
